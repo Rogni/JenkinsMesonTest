@@ -1,11 +1,6 @@
 pipeline {
     agent { dockerfile true }
     stages {
-        stage('Git clone') {
-            steps {
-                git 'https://github.com/Rogni/JenkinsMesonTest.git'
-            }
-        }
         stage('build') {
             steps {
                 sh 'meson build --prefix=$PWD/install'
