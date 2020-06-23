@@ -19,7 +19,13 @@ pipeline {
         }
         stage('arhive') {
             steps {
-                archiveArtifacts 'install/**/*'
+                sh 'tar -czvf test.tar.gz install'
+            }
+        }
+
+        stage('finish') {
+            steps {
+                archiveArtifacts 'test.tar.gz'
             }
         }
     }

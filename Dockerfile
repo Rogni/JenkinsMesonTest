@@ -9,5 +9,6 @@ RUN python3 -m pip install \
         meson \
         ninja 
 
+RUN apt-get install xz-utils tar -y
 
 CMD ["/bin/bash"]
