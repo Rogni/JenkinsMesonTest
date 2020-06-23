@@ -19,7 +19,7 @@ pipeline {
         }
         stage('arhive') {
             steps {
-                arhiveArtifacts 'install/*'
+                archiveArtifacts 'install/*'
             }
         }
     }
