@@ -1,10 +1,13 @@
-FROM python:3
+FROM ubuntu:20.04
 
-RUN pip install \
+RUN apt-get update && apt-get install -y \
+        python3 \
+        python3-pip \
+        ldc2
+
+RUN python3 -m pip install \
         meson \
         ninja 
-RUN apt-get install wget xz-utils tar -y
 
-FROM dlanguage/ldc
 
 CMD ["/bin/bash"]
